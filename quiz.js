@@ -1,56 +1,49 @@
-const quizData = [
-  {
-    question: "What is the capital of France?",
-    choices: ["Paris", "Berlin", "Madrid"],
-    answer: "Paris",
-  },
-  {
-    question: "What is the largest planet in our solar system?",
-    choices: ["Jupiter", "Saturn", "Uranus"],
-    answer: "Jupiter",
-  },
-  {
-    question: "What is the tallest mammal?",
-    choices: ["Giraffe", "Elephant", "Hippopotamus"],
-    answer: "Giraffe",
-  },
-];
+const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // prevent default form submission
 
-const questionEl = document.getElementById("question");
-const choicesEl = document.getElementById("choices");
-const submitBtn = document.getElementById("submit");
-const scoreEl = document.getElementById("score");
+  let correctAnswers = 0;
+  // let questionsdone = 0;
 
-let currentQuestion = 0;
-let score = 0;
+  //question 1
+  const q1ans = document.querySelector('input[name="q1"]:checked');
+  if (q1ans && q1ans.value === 'b') {
+    correctAnswers++;
+    // questionsdone++;
+  }
 
-function loadQuestion() {
-  questionEl.textContent = quizData[currentQuestion].question;
-  choicesEl.innerHTML = "";
-  quizData[currentQuestion].choices.forEach((choice) => {
-    const li = document.createElement("li");
-    li.textContent = choice;
-    li.addEventListener("click", () => {
-      if (choice === quizData[currentQuestion].answer) {
-        score++;
-      }
-      currentQuestion++;
-      if (currentQuestion < quizData.length) {
-        loadQuestion();
-      } else {
-        showScore();
-      }
-    });
-    choicesEl.appendChild(li);
-  });
-}
+  //question 2
+  const q2ans = document.querySelector('input[name="q2"]:checked');
+  if (q2ans && q2ans.value === 'a') {
+    correctAnswers++;
+    // questionsdone++;
+  }
 
-function showScore() {
-  questionEl.textContent = `You scored ${score} out of ${quizData.length}!`;
-  choicesEl.innerHTML = "";
-  submitBtn.style.display = "none";
-  scoreEl.style.display = "block";
-}
+  //question 3
+  const q3ans = document.querySelector('input[name="q3"]:checked');
+  if (q3ans && q3ans.value === 'd') {
+    correctAnswers++;
+    // questionsdone++;
+  }
 
-loadQuestion();
-submitBtn.addEventListener("click", showScore);
+  //question 4
+  const q4ans = document.querySelector('input[name="q4"]:checked');
+  if (q4ans && q4ans.value === 'b') {
+    correctAnswers++;
+    // questionsdone++;
+  }
+
+  //question 5
+  const q5ans = document.querySelector('input[name="q5"]:checked');
+  if (q5ans && q5ans.value === 'd') {
+    correctAnswers++;
+    // questionsdone++;
+  }
+
+
+
+
+  
+
+  alert(`You got ${correctAnswers} out of 5 questions correct.`);
+});
