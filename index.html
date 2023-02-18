@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="quiz.css">
   <title>quiz app</title>
 </head>
 <body>
+  <div class="head">
+    <h1>JavaScript Quiz</h1>
+    <h6>Test Your Knowledge In Javascript Fundamentals</h6>
+    <hr>
+  </div>
 
-  <form>
+  <form class="quiz">
     <p>Q1. In which element do we put in javascript code?</p>
     <input type="radio" name="q1" value="a">a. js<br>
     <input type="radio" name="q1" value="b">b. script<br>
@@ -36,8 +42,10 @@
     <input type="radio" name="q5" value="b">b. $<br>
     <input type="radio" name="q5" value="c">c. #<br>
     <input type="radio" name="q5" value="d">d. NO special character<br><br>
-  
-    <input type="submit" value="Submit Answers">
+    
+    <div class="submitbutton">
+      <input type="submit" value="Submit Answers" id="button">
+    </div>
   </form>
   
   

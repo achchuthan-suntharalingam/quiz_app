@@ -1,0 +1,11 @@
+.head{text-align: center;
+      background-color:#2B0358;
+      color: white;}
+body{background-color:#1F023F;
+      color:white;}
+
+#button{background-color: #580306;
+        color:white;
+      padding:10px;}
+
+.submitbutton{padding:30px;}
